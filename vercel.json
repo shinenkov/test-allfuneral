@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/proxy/:match*",
+      "destination": "https://test-task-api.allfuneral.com/:match*"
+    }
+  ]
+}

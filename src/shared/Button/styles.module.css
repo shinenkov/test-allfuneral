@@ -1,0 +1,212 @@
+.button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid #00000033;
+  color: #3B3B3B;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 40px;
+}
+
+.button:disabled {
+  color: #b1b1b1;
+  cursor: default;
+}
+
+.button:disabled svg path {
+  stroke: #b1b1b1;
+}
+
+.button label {
+  text-align: center;
+  flex: 100%;
+  cursor: inherit;
+  text-decoration: none;
+  height: 20px;
+  font-weight: 600;
+  font-Size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.48px;
+}
+
+.button svg {
+  flex: 20px;
+}
+.button svg + label {
+  margin-left: -20px;
+}
+.button svg path {
+  stroke: #3B3B3B;
+}
+
+.button:hover:not(:disabled)  { 
+  border-color: #00000066;
+  color: #6D4AFF; 
+}
+
+.button:hover:not(:disabled) svg path {
+  stroke: #6D4AFF;
+}
+
+.button:active:not(:disabled) {
+  border-color: #6243E6;
+  color: #6243E6;
+}
+
+.button:active:not(:disabled) svg path {
+  stroke: #6243E6;
+}
+
+/* outlined */
+.outlined {
+  border: 1px solid #00000033;
+}
+
+/* iconButton */
+.iconButton {
+  font-size: 18px;
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.iconButton:disabled {
+  color: #b1b1b1;
+  cursor: default;
+}
+
+.iconButton:disabled svg path {
+  stroke: #b1b1b1;
+}
+
+.iconButton:hover:not(:disabled) { 
+  background-color: #f5f5f5;
+}
+
+.iconButton:active:not(:disabled) {
+  background-color: #ebe6ff
+}
+
+.iconButton svg path {
+  stroke: #3B3B3B;
+}
+
+/* filled */
+.filled {
+  border: none;
+  background-color: #3B3B3B;
+  color: #FFFFFFF2;
+}
+
+.filled svg path {
+  stroke: #FFFFFFF2; 
+}
+
+.filled:hover:not(:disabled) {
+  background-color: #626262;
+  color: #FFFFFFF2;
+}
+
+.filled:hover:not(:disabled) svg path {
+  stroke: #FFFFFFF2; 
+}
+
+.filled:active:not(:disabled) {
+  background-color: #757575;
+  color: #FFFFFFF2;
+}
+
+.filled:active:not(:disabled) svg path {
+  border-color: #6243E6;
+  stroke: #FFFFFFF2; 
+}
+
+/* flattened */
+.flattened {
+  height: 28px;
+  width: 72px;
+  padding: 4px 8px;
+}
+
+.flattened svg {
+  height: 16px;
+  width: 16px;
+}
+
+.flattened label {
+  font-Size: 11px;
+}
+.flattened svg + label {
+  margin-left: 0px;
+}
+
+/* iconButton Filled */
+.iconButton.filled {
+  border: none;
+  width: 28px;
+  padding: 0.125rem;
+  height: 28px;
+  border-radius: 8px;
+}
+
+.iconButton.filled svg {
+  height: 16px;
+  width: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .button {
+    color: #fafafa;
+    border: 1px solid #ffffffCC;
+  }
+  .button svg path {
+    stroke: #C4C4C4;
+  }
+  .button:hover:not(:disabled)  { 
+    border-color: #FFFFFF99;
+  }
+  .button:active:not(:disabled) {
+    border-color: #6243E6;
+  }
+  .filled {
+    border: none;
+    background-color: #C4C4C4;
+    color: #000000ee;
+  }
+  .filled svg path {
+    stroke: #000000ee;
+  }
+  .filled:hover:not(:disabled) {
+    background-color: #9D9D9D;
+    color: #000000FF;
+  }
+  .filled:hover:not(:disabled) svg path {
+    stroke: #000000FF; 
+  }
+  .filled:active:not(:disabled) {
+    background-color: #8A8A8A;
+    color: #000000FF;
+  }
+  .filled:active:not(:disabled) svg path {
+    stroke: #000000FF; 
+  }
+  .iconButton:hover:not(:disabled) { 
+    background-color: #0A0A0A;
+  }
+  
+  .iconButton:active:not(:disabled) {
+    background-color: #101011
+  }
+  
+  .iconButton svg path {
+    stroke: #C4C4C4;
+  }
+}

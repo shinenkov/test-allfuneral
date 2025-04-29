@@ -1,0 +1,18 @@
+.container {
+  padding: 24px;
+  width: 300px;
+  display: grid;
+  row-gap: 24px;
+  grid-template-rows: auto 1fr auto;
+}
+
+.wrapper {
+  max-width: 600px;
+  max-height: 600px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin: 0 12px;
+}

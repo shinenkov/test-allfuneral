@@ -1,0 +1,191 @@
+.selectContainer {
+  max-width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+  position: relative;
+  height: 40px;
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid #00000033;
+  cursor: pointer;
+}
+
+.selectContainer:hover:not(.disabled) {
+  border-color: #00000080;
+}
+
+.focused {
+  border-width: 2px;
+  border-color: #35CDFD;
+}
+.focused.selectContainer:hover:not(.disabled) {
+  border-color: #35CDFD;
+}
+
+.selectedText {
+  color: #000000CC;
+  text-decoration: none;
+  font-weight: 400;
+  font-Size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.48px;
+  overflow: hidden;
+  width: calc(100% - 12px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selectOptions {
+  position: absolute;
+  top: 38px;
+  background-color: #FFF;
+  left: -2px;
+  box-sizing: border-box;
+  width: calc(100% + 4px);
+  max-height: 320px;
+  overflow-y: auto;
+  box-shadow: 0px 4px 8px 0px #00000033;
+  border-radius: 8px;
+  list-style: none;
+  padding: 8px 0 0 0;
+  margin: 0;
+  z-index: 1;
+}
+
+.selectedText svg path {
+  stroke: #000;
+}
+
+.selectedText svg {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  right: 10px;
+  top: 10px;
+  transform: rotate(-90deg)
+}
+
+.selectedTextActive svg {
+  transform: rotate(90deg)
+}
+
+li {
+  list-style-type: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.selectOption {
+  display: flex;
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  justify-content: flex-start;
+  align-items: center;
+}
+.active {
+  background-color: #0000000D;
+}
+
+.selectOption input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin-right: 24px;
+  border: 1px solid #0000004D;
+  border-radius: 4px;
+}
+.checkmark svg {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  width: 18px;
+  height: 18px;
+}
+.checkmark svg path {
+  stroke: #000000CC;
+}
+
+.selectOption input ~ .checkmark {
+  background-color: transparent;
+}
+
+.selectOption:hover {
+  background-color: #00000033 !important;
+}
+.disabled, .disabled .selectedText {
+  color: #b1b1b1;
+  cursor: default;
+}
+.disabled .selectedText svg path {
+  stroke: #b1b1b1;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media (prefers-color-scheme: dark) {
+  .selectedText svg path {
+    stroke: #FFF;
+  }
+  .selectedText {
+    color: #ebebeb;
+  }
+  .selectOptions {
+    background-color: #242424;
+  }
+  .selectOption {
+    color: #ebebeb;
+    background-color: #242424;
+  }
+  .active {
+    background-color: #161616f2;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0E0E0E;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #444444;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #707070;
+  }
+  .selectOption input ~ .checkmark {
+    background-color: #5f5f5f;
+  }
+  .selectOption:hover {
+    background-color: #0e0e0e !important;
+  }
+}

@@ -1,0 +1,54 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1.6em 1fr;
+  justify-items: start;
+  column-gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+.wrapper label {
+  cursor: inherit;
+}
+.wrapper input {
+  position: absolute;
+  opacity: 0;
+  cursor: inherit;
+  height: 0;
+  width: 0;
+}
+.disabled, .disabled label {
+  cursor: default;
+  color: #b1b1b1;
+}
+.disabled span svg path {
+  stroke: #b1b1b1;
+}
+
+.checkmark {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin-right: 24px;
+  border: 1px solid #0000004D;
+  border-radius: 4px;
+}
+.checkmark svg {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  width: 18px;
+  height: 18px;
+}
+.checkmark svg path {
+  stroke: #000000CC;
+}
+
+.wrapper input ~ .checkmark {
+  background-color: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  .wrapper input ~ .checkmark {
+    background-color: #5f5f5f;
+  }
+}
