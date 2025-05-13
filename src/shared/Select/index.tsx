@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { CSSProperties, useEffect, useState, useId } from "react";
-import { useSelectContext } from "./context/index";
+import { CSSProperties, useEffect, useState, useId } from 'react';
+import { useSelectContext } from './context/index';
 import Chevron from '../../assets/icons/chevron.svg?react';
 import Check from '../../assets/icons/check.svg?react';
-import styles from "./select.module.css";
+import styles from './select.module.css';
 
 type SelectProps = {
   defaultText: string;
@@ -30,9 +30,7 @@ function Select(props: SelectProps) {
     disabled,
   } = props;
   const [defaultSelectText, setDefaultSelectText] = useState(defaultText);
-  const [selected, setSelected] = useState<any[]>(
-    selectedOptions,
-  );
+  const [selected, setSelected] = useState<any[]>(selectedOptions);
 
   const isOpen = activeSelectId === selectId;
 
@@ -50,6 +48,12 @@ function Select(props: SelectProps) {
   };
 
   useEffect(() => {
+    if (optionsList.some((option) => selectedOptions.includes(option))) {
+      setDefaultSelectText(selectedOptions.map((option) => option).join(', '));
+    }
+  }, [selectedOptions]);
+
+  useEffect(() => {
     setSelected(selectedOptions);
   }, [selectedOptions]);
 
@@ -57,9 +61,9 @@ function Select(props: SelectProps) {
     if (selectedOptions.length === optionsList.length) {
       setDefaultSelectText(defaultAll);
     }
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -68,9 +72,14 @@ function Select(props: SelectProps) {
     setActiveSelectId(isOpen ? null : selectId);
   };
 
-  const handleOptionClick = (e: React.MouseEvent<HTMLLIElement, MouseEvent> | React.ChangeEvent<HTMLInputElement>, option: any) => {
+  const handleOptionClick = (
+    e:
+      | React.MouseEvent<HTMLLIElement, MouseEvent>
+      | React.ChangeEvent<HTMLInputElement>,
+    option: any
+  ) => {
     if (multiselect) {
-      e.stopPropagation()
+      e.stopPropagation();
       const newSelected = [...selected];
       const optionIndex = newSelected.indexOf(option);
       if (optionIndex === -1) {
@@ -83,7 +92,7 @@ function Select(props: SelectProps) {
         if (newSelected.length === optionsList.length) {
           setDefaultSelectText(defaultAll);
         } else {
-          setDefaultSelectText(newSelected.map((opt) => opt).join(", "));
+          setDefaultSelectText(newSelected.map((opt) => opt).join(', '));
         }
       } else {
         setDefaultSelectText(defaultText);
@@ -115,31 +124,30 @@ function Select(props: SelectProps) {
       {isOpen && (
         <ul className={styles.selectOptions}>
           {optionsList.map((option) => {
-            const isSelected = selected.some(
-              (item: any) => item === option,
-            );
+            const isSelected = selected.some((item: any) => item === option);
             return (
               <li
                 className={
-                  styles.selectOption +
-                  (isSelected ? " " + styles.active : "")
+                  styles.selectOption + (isSelected ? ' ' + styles.active : '')
                 }
                 data-name={option}
                 key={option}
                 onClick={(e) => handleOptionClick(e, option)}
               >
-                {multiselect && (<>
-                  <input
-                    onChange={(e) => {
-                      handleOptionClick(e, option);
-                    }}
-                    type="checkbox"
-                    checked={isSelected}
-                  />
-                  <span className={styles.checkmark} >
-                    {isSelected && (<Check />)}
-                  </span>
-                </>)}
+                {multiselect && (
+                  <>
+                    <input
+                      onChange={(e) => {
+                        handleOptionClick(e, option);
+                      }}
+                      type="checkbox"
+                      checked={isSelected}
+                    />
+                    <span className={styles.checkmark}>
+                      {isSelected && <Check />}
+                    </span>
+                  </>
+                )}
                 {option}
               </li>
             );

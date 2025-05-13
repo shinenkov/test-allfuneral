@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: 0.25px;
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+.buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.prev {
+  flex: 0 1 50px;
+  margin-left: -50px;
+}
+
+.buttons button:last-child svg path {
+  stroke: #d72323;
+}
+
+@media (prefers-color-scheme: dark) {
+  .title {
+    color: #ffffff;
+  }
+}

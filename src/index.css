@@ -14,13 +14,17 @@
 body {
   margin: 0;
   display: flex;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   min-width: 320px;
   min-height: 100vh;
 }
 
+div#root {
+  width: 100vw;
+}
+
 button {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 button:focus,
@@ -30,7 +34,7 @@ input:focus-visible {
 }
 
 input {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   border: 2px solid #575757;
   border-radius: 4px;
   font-size: 14px;

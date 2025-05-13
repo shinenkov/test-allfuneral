@@ -1,0 +1,101 @@
+.container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  color: #6b7280;
+  flex: 0 0 160px;
+  font-size: 13px;
+}
+
+.value {
+  color: #1a1a1a;
+  font-weight: 400;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 60% 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 auto;
+}
+
+.formRow .field:first-child .label {
+  flex: 1 0 160px;
+}
+
+.formRow .field:last-child .label {
+  flex: 1 1 35px;
+}
+.separator {
+  margin-left: 12px;
+  margin-right: 12px;
+  color: #0000004d;
+}
+
+.field .value {
+  flex: 1 1 auto;
+}
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: #121212;
+  }
+  .header h2 {
+    color: #ffffff;
+  }
+  .value {
+    color: #ffffff;
+  }
+  .label {
+    color: #b0b0b0;
+  }
+  .separator {
+    color: #ffffff4d;
+  }
+}

@@ -9,12 +9,7 @@ type InputProps = {
 };
 
 const Input = React.memo((props: InputProps) => {
-  const {
-    label,
-    value,
-    onChange,
-    disabled,
-  } = props;
+  const { label, value, onChange, disabled } = props;
 
   return (
     <input

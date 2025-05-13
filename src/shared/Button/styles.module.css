@@ -5,7 +5,7 @@
   box-sizing: border-box;
   background-color: transparent;
   border: 1px solid #00000033;
-  color: #3B3B3B;
+  color: #3b3b3b;
   padding: 10px 12px;
   border-radius: 8px;
   cursor: pointer;
@@ -22,13 +22,14 @@
 }
 
 .button label {
+  white-space: nowrap;
   text-align: center;
   flex: 100%;
   cursor: inherit;
   text-decoration: none;
   height: 20px;
   font-weight: 600;
-  font-Size: 13px;
+  font-size: 13px;
   line-height: 20px;
   letter-spacing: 0.48px;
 }
@@ -40,25 +41,25 @@
   margin-left: -20px;
 }
 .button svg path {
-  stroke: #3B3B3B;
+  stroke: #3b3b3b;
 }
 
-.button:hover:not(:disabled)  { 
+.button:hover:not(:disabled) {
   border-color: #00000066;
-  color: #6D4AFF; 
+  color: #6d4aff;
 }
 
 .button:hover:not(:disabled) svg path {
-  stroke: #6D4AFF;
+  stroke: #6d4aff;
 }
 
 .button:active:not(:disabled) {
-  border-color: #6243E6;
-  color: #6243E6;
+  border-color: #6243e6;
+  color: #6243e6;
 }
 
 .button:active:not(:disabled) svg path {
-  stroke: #6243E6;
+  stroke: #6243e6;
 }
 
 /* outlined */
@@ -87,52 +88,52 @@
   stroke: #b1b1b1;
 }
 
-.iconButton:hover:not(:disabled) { 
+.iconButton:hover:not(:disabled) {
   background-color: #f5f5f5;
 }
 
 .iconButton:active:not(:disabled) {
-  background-color: #ebe6ff
+  background-color: #ebe6ff;
 }
 
 .iconButton svg path {
-  stroke: #3B3B3B;
+  stroke: #3b3b3b;
 }
 
 /* filled */
 .filled {
   border: none;
-  background-color: #3B3B3B;
-  color: #FFFFFFF2;
+  background-color: #3b3b3b;
+  color: #fffffff2;
 }
 
 .filled svg path {
-  stroke: #FFFFFFF2; 
+  stroke: #fffffff2;
 }
 
 .filled:hover:not(:disabled) {
   background-color: #626262;
-  color: #FFFFFFF2;
+  color: #fffffff2;
 }
 
 .filled:hover:not(:disabled) svg path {
-  stroke: #FFFFFFF2; 
+  stroke: #fffffff2;
 }
 
 .filled:active:not(:disabled) {
   background-color: #757575;
-  color: #FFFFFFF2;
+  color: #fffffff2;
 }
 
 .filled:active:not(:disabled) svg path {
-  border-color: #6243E6;
-  stroke: #FFFFFFF2; 
+  border-color: #6243e6;
+  stroke: #fffffff2;
 }
 
 /* flattened */
 .flattened {
   height: 28px;
-  width: 72px;
+  width: auto;
   padding: 4px 8px;
 }
 
@@ -142,10 +143,10 @@
 }
 
 .flattened label {
-  font-Size: 11px;
+  font-size: 11px;
 }
 .flattened svg + label {
-  margin-left: 0px;
+  margin-left: 4px;
 }
 
 /* iconButton Filled */
@@ -165,48 +166,64 @@
 @media (prefers-color-scheme: dark) {
   .button {
     color: #fafafa;
-    border: 1px solid #ffffffCC;
+    border: 1px solid #ffffffcc;
   }
   .button svg path {
-    stroke: #C4C4C4;
+    stroke: #c4c4c4;
   }
-  .button:hover:not(:disabled)  { 
-    border-color: #FFFFFF99;
+  .button:hover:not(:disabled) {
+    border-color: #ffffff99;
   }
   .button:active:not(:disabled) {
-    border-color: #6243E6;
+    border-color: #6243e6;
   }
   .filled {
     border: none;
-    background-color: #C4C4C4;
+    background-color: #c4c4c4;
     color: #000000ee;
   }
   .filled svg path {
     stroke: #000000ee;
   }
   .filled:hover:not(:disabled) {
-    background-color: #9D9D9D;
-    color: #000000FF;
+    background-color: #9d9d9d;
+    color: #000000ff;
   }
   .filled:hover:not(:disabled) svg path {
-    stroke: #000000FF; 
+    stroke: #000000ff;
   }
   .filled:active:not(:disabled) {
-    background-color: #8A8A8A;
-    color: #000000FF;
+    background-color: #8a8a8a;
+    color: #000000ff;
   }
   .filled:active:not(:disabled) svg path {
-    stroke: #000000FF; 
+    stroke: #000000ff;
   }
-  .iconButton:hover:not(:disabled) { 
-    background-color: #0A0A0A;
+  .iconButton:hover:not(:disabled) {
+    background-color: #0a0a0a;
   }
-  
   .iconButton:active:not(:disabled) {
-    background-color: #101011
+    background-color: #101011;
   }
-  
   .iconButton svg path {
-    stroke: #C4C4C4;
+    stroke: #c4c4c4;
+  }
+  .iconButton.filled {
+    background-color: #3b3b3b;
+  }
+  .iconButton.filled svg path {
+    stroke: #ffffff;
+  }
+  .iconButton.filled:hover:not(:disabled) {
+    background-color: #626262;
+  }
+  .iconButton.filled:hover:not(:disabled) svg path {
+    stroke: #ffffff;
+  }
+  .iconButton.filled:active:not(:disabled) {
+    background-color: #767676;
+  }
+  .iconButton.filled:active:not(:disabled) svg path {
+    stroke: #ffffff;
   }
 }

@@ -1,17 +1,18 @@
 .wrapper {
   margin: 0 auto;
-  width: 200px;
-  height: 360px;
+  width: 280px;
+  height: 280px;
+  min-height: 108px;
   display: flex;
   place-items: center;
   justify-content: center;
 }
 .loading {
-  border: 10px solid #eeeeee;
-  border-top: 10px solid #2196f3;
+  border: 6px solid #eeeeee;
+  border-top: 6px solid #6d4aff;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 60px;
+  height: 60px;
   animation: spin 1s linear infinite;
 }
 

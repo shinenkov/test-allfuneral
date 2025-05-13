@@ -1,6 +1,6 @@
 import styles from './style.module.css';
-const Loading = () => (
-  <div className={styles.wrapper}>
+const Loading = ({ height }: { height?: string }) => (
+  <div className={styles.wrapper} style={{ height: height }}>
     <div className={styles.loading} />
   </div>
 );

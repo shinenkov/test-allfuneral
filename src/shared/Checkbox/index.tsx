@@ -14,7 +14,10 @@ const Checkbox = React.memo((props: CheckboxProps) => {
   const { onChange, id, label, checked, disabled } = props;
 
   return (
-    <div className={`${styles.wrapper} ${disabled && styles.disabled}`} onClick={!disabled ? onChange : () => false}>
+    <div
+      className={`${styles.wrapper} ${disabled && styles.disabled}`}
+      onClick={!disabled ? onChange : () => false}
+    >
       <input
         disabled={disabled}
         id={id}
@@ -23,10 +26,12 @@ const Checkbox = React.memo((props: CheckboxProps) => {
         onChange={!disabled ? onChange : () => false}
         checked={checked}
       />
-      <span className={styles.checkmark} >
-        {checked && (<Check />)}
-      </span>
-      <label onClick={!disabled ? onChange : () => false} className={styles.label} htmlFor={id}>
+      <span className={styles.checkmark}>{checked && <Check />}</span>
+      <label
+        onClick={!disabled ? onChange : () => false}
+        className={styles.label}
+        htmlFor={id}
+      >
         {label}
       </label>
     </div>
